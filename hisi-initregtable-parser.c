@@ -27,7 +27,7 @@
  * Main purpose of this early low level function is to configure clocks and ddr phy/mem configuration in early stage so bootloader can be loaded in ddr ram.
  * Also io muxing is partially or completelly done at this phase.
  *
- * - Parsed init register table can be used to make eduncated guesses about undocumented hardware configuration! 
+ * - Parsed init register table can be used to make educated guesses about undocumented hardware configuration! 
  *
  * Soc address space CSV file format(First Line omited)
  * BASE,     , END(OPT),   NAME
