@@ -8,7 +8,7 @@ init_registers(uint32_t* table_start_address, uint32_t mode)
 
 Main purpose of this early low level function is to configure clocks and ddr phy/mem configuration in early stage so bootloader can be loaded in ddr ram. Also io muxing is partially or completelly done at this phase.
 
-- Parsed init register table can be used to make eduncated guesses about undocumented hardware configuration! 
+- Parsed init register table can be used to make educated guesses about undocumented hardware configuration! 
 
 Uses external per SoC type csv-files to identify which register base table entry refers to.
 Any contribution in terms of accurate&complete csv-files for different devices is much appreciated.
