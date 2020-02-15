@@ -19,7 +19,7 @@
  * Hisi-initregtable-parser
  * janne kaikkonen (c) 2020
  *
- * Build: gcc -Wall -g hisi-initregtable-parser.c -o hisi-initregtable_parser
+ * Build: gcc -Wall -g hisi-initregtable-parser.c -o hisi-initregtable-parser
  * Usage: call the program without parameters to see usage with examples
  *
  * 
