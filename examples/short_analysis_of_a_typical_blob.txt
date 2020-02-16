@@ -40,4 +40,4 @@ GPIO-X
 /* One or more full null entrys must trail register operations in order to terminate iteration */
 
 
-/* By return of init_registers ddr mem range is considered enabled */
+/* By return of init_registers() ddr mem range is considered enabled */
