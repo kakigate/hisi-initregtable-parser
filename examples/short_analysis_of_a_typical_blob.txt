@@ -1,0 +1,43 @@
+/* Analysis of typical start of init register table */
+
+MISC     - 0x0c8  - ADCL power on.
+SYS CTRC - 0x0    - Change from "DOZE" to "SLOW" mode
+SYS CTRL - 0x0    - (READ) from status that "SLOW" mode is in use
+
+/* By this Point "SLOW" mode is in use */
+
+CRG      - 0x0000 - APLL
+CRG      - 0x0004 - APLL
+CRG      - 0x0030 - SoC Clock
+CRG      - 0x00e8 - (READ) CRG status register
+CRG      - 0x00c0 - SFC clock
+SYS CTRL - 0x014  - PLLCTRL
+
+/* PLL configurations done */
+
+SYS CTRL - 0x000  - Change from "SLOW" to "NORMAL"
+SYS CTRL - 0x000  - (READ) from status that "NORMAL" mode is in use
+
+/* By this point clock system has been configured and core is at full speed */
+
+SYS CTRL - 0x090  - DDRT0 training register
+SYS CTRL - 0x15c  - Sysboot11 ... Shadow register to store something? Initialization flags? Configuration? Clock configuration?
+SYS CTRL - 0x15c  - Sysboot11 ...   Note: Sysboot11 is not referred to from bootloader code
+SYS CTRL - 0x15c  - Sysboot11 ...     Datasheet says nothing much
+SYS CTRL - 0x15c  - Sysboot11 ...       Your guess..
+MISC     - 0x014  - Set PWM 0-3 as output of PMC module.
+
+/* Multiple(dozens) operations to these registers in varying order will follow to configure external ram */
+
+DDRC0
+PMC
+
+/* Also operations to registers usually follow */
+
+IOMUX
+GPIO-X
+
+/* One or more full null entrys must trail register operations in order to terminate iteration */
+
+
+/* By return of init_registers ddr mem range is considered enabled */
